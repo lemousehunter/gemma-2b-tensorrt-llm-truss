@@ -14,6 +14,7 @@ STOP_WORDS_LIST = None
 BAD_WORDS_LIST = None
 PROMPT_TEMPLATE = None
 
+
 class Model:
     def __init__(self, **kwargs):
         self.model = None
@@ -25,7 +26,7 @@ class Model:
 
     def load(self):
         snapshot_download(
-            "htrivedi99/mistral-7b-v0.2-trtllm",
+            "lemousehunter/mistral-7b-tensorrt",
             local_dir=self._data_dir,
             max_workers=4,
         )
@@ -33,7 +34,7 @@ class Model:
         self.runtime_rank = tensorrt_llm.mpi_rank()
 
         model_name, model_version = read_model_name(f"{self._data_dir}/compiled-model")
-        tokenizer_dir = "mistralai/Mistral-7B-Instruct-v0.2"
+        tokenizer_dir = "mistralai/Mistral-7B-v0.1"
 
         self.tokenizer, self.pad_id, self.end_id = load_tokenizer(
             tokenizer_dir=tokenizer_dir,
