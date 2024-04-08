@@ -45,7 +45,7 @@ class Model:
         )
 
 
-        runner_cls = ModelRunner
+        runner_cls = ModelRunnerCpp
         # runner_kwargs = dict(engine_dir=f"{self._data_dir}/compiled-model",
         #                      lora_dir=None,
         #                      rank=self.runtime_rank,
