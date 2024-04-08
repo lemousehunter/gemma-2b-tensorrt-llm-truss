@@ -34,7 +34,7 @@ class Model:
         self.runtime_rank = tensorrt_llm.mpi_rank()
 
         model_name, model_version = read_model_name(f"{self._data_dir}/compiled-model")
-        tokenizer_dir = "mistralai/Mistral-7B-v0.1"
+        tokenizer_dir = "google/gemma-2b-it"
 
         self.tokenizer, self.pad_id, self.end_id = load_tokenizer(
             tokenizer_dir=tokenizer_dir,
