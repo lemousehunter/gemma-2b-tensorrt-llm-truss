@@ -26,7 +26,7 @@ class Model:
 
     def load(self):
         snapshot_download(
-            "lemousehunter/mistral-7b-tensorrt",
+            "lemousehunter/gemma-2b-tensorrt",
             local_dir=self._data_dir,
             max_workers=4,
         )
